@@ -831,6 +831,9 @@
             
             cloud.style.opacity = 1
             cloud2.style.opacity = 1
+            cloud2.addEventListener('mouseenter', function() {
+                cloud2.style.cursor = 'pointer'
+                })
 
 // 创建音频元素
 let qt = document.createElement("audio")
