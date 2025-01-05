@@ -530,7 +530,7 @@
             <div class="bg"></div>
             <div class="moon-box">
                 
-                <div class="moon">    
+                <div class="moon">  
                 </div>
                 
             </div>
@@ -792,6 +792,11 @@
                     x.setAttribute("loop","loop")
                 x.setAttribute("autoplay","autoplay")
                 x.setAttribute("src", "yujian.mp3")
+                qt.pause(); // 停止音频播放
+                qt.removeAttribute("autoplay"); // 移除 autoplay 属性
+                qt.removeAttribute("loop"); // 移除 loop 属性
+                // 如果你想重置音频到开始位置，可以使用下面这行代码
+                qt.currentTime = 0;
             })
             }
         
@@ -841,15 +846,31 @@ let qt = document.createElement("audio")
         qt.preload = "auto"; // 预加载
 
         // 添加点击事件监听器到 cloud 元素
-        cloud.addEventListener('click', function(){  
+        /* cloud.addEventListener('click', function(){  
             qt.setAttribute("loop","loop")
             qt.setAttribute("autoplay","autoplay")
             qt.setAttribute("src", "qingtian.ogg")
-            })
+            }) */
             cloud2.addEventListener('click', function(){
             qt.setAttribute("loop","loop")
             qt.setAttribute("autoplay","autoplay")
             qt.setAttribute("src", "qingtian.ogg")
+            x.pause(); // 停止音频播放
+            x.removeAttribute("autoplay"); // 移除 autoplay 属性
+            x.removeAttribute("loop"); // 移除 loop 属性
+            // 如果你想重置音频到开始位置，可以使用下面这行代码
+            qt.currentTime = 0;
+            })
+
+            faguangziti[0].addEventListener('click', function(){
+                    x.setAttribute("loop","loop")
+                x.setAttribute("autoplay","autoplay")
+                x.setAttribute("src", "yujian.mp3")
+                qt.pause(); // 停止音频播放
+                qt.removeAttribute("autoplay"); // 移除 autoplay 属性
+                qt.removeAttribute("loop"); // 移除 loop 属性
+                // 如果你想重置音频到开始位置，可以使用下面这行代码
+                qt.currentTime = 0;
             })
 
             butterfly.style.display = 'none'
@@ -962,8 +983,7 @@ let qt = document.createElement("audio")
         font-size: 200px;
   /* font-weight: 900; */
   animation: zhankai 2.5s ease-in-out alternate infinite;
-            /* background: linear-gradient(to right, deepskyblue, deeppink); */
-  /* background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fnote%2Fl%2Fpublic%2Fp49954802.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1673017143&t=fee5dc7a21a9e932d2e401927359bc8c) center center no-repeat; */
+
   background-size: 100% 100%;
   -webkit-background-clip: text;
 
@@ -1006,7 +1026,6 @@ let qt = document.createElement("audio")
             suofangwenzi.style.height = 500+'px'
 
             suofangwenzi.style.top = 150+'px'
-            /* suofangwenzi.style.background = `url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmaterials.cdn.bcebos.com%2Fimages%2F26225473%2F640e4cfa0b837f0282e52a3568ec9ad9.jpeg&refer=http%3A%2F%2Fmaterials.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1673016131&t=479c7a30f5dc9c0f70183e6328348059")  center center no-repeat`*/
 
         })
         
@@ -1026,7 +1045,6 @@ let qt = document.createElement("audio")
         }, 1000)
 
         
-        // suofangwenzi.style.background = "url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fnote%2Fl%2Fpublic%2Fp49954802.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1673017143&t=fee5dc7a21a9e932d2e401927359bc8c) center center no-repeat"
         
     })
 
@@ -1034,8 +1052,6 @@ let qt = document.createElement("audio")
         canvas.style.display = 'none'
         yangguangmingmeiWord.style.display = 'none'
 
-
-        /*suofangwenzi.style.background = "url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fnote%2Fl%2Fpublic%2Fp49954802.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1673017143&t=fee5dc7a21a9e932d2e401927359bc8c) center center no-repeat"*/
     })
 
         let ctx = canvas.getContext('2d')
@@ -1048,7 +1064,7 @@ let qt = document.createElement("audio")
             suofangwenzi.style.height = 500+'px'
 
             suofangwenzi.style.top = 150+'px'
-           /* suofangwenzi.style.background = `url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.fynews.net%2Fportal%2F202111%2F10%2F102338dj56s70vkxg04p7k.jpg&refer=http%3A%2F%2Fimg.fynews.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1673017635&t=125382905c3f3f2fe3bd61eaad4bfb99")  center center no-repeat`*/
+ 
         })
 
         // 定义生成随机数的函数
